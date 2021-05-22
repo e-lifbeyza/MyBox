@@ -1,0 +1,99 @@
+-----------------------------------------Class-Inheritance-------------------
+public class User {
+
+	int id ;
+	String userName;
+	
+}
+
+public class Instructor extends User {
+
+	String odevYuklemeAraclari;
+	String dersKaydiYuklemeAraclari;
+}
+
+public class Student extends User {
+
+	String bitenGorevleriIsaretlemeButonu;
+	String sonrakiderseGecButonu;
+	String yorumBloğu;
+	String yapilanOdeviYuklemeAraclari;
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		Instructor engin = new Instructor();
+		engin.dersKaydiYuklemeAraclari = "Yukle";
+		engin.odevYuklemeAraclari ="odev verildi;"
+		engin.id = 1;
+		engin.userName = "Engin DEMİROG";
+	 
+	    Student student = new  Student();
+		student.bitenGorevleriIsaretlemeButonu = "Bitti";
+	    student.sonrakiderseGecButonu = "sonraki derse gecildi";
+		student.yapilanOdeviYuklemeAraclari = "odev sisteme yuklendi";
+		student.yorumBloğu = "ders hakkında gorusleriniziyaziniz";
+		student.id = 0;
+		student.userName = "x";
+	}
+
+}
+
+-----------------------------------------Class-Inheritance-Method-------------------
+public class User {
+
+	int id ;
+	String userName;
+	
+}
+
+public class Instructor extends User {
+
+	String odevYuklemeAraclari;
+	String dersKaydiYuklemeAraclari;
+}
+
+public class Student extends User {
+
+	String bitenGorevleriIsaretlemeButonu;
+	String sonrakiderseGecButonu;
+	String yorumBloğu;
+	String yapilanOdeviYuklemeAraclari;
+}
+
+public class UserManager {
+	/*public void add(Instructor user) {
+		System.out.println(user.userName +" kaydedildi");
+	}
+	
+	public void add(Student user) {
+		System.out.println(user.userName +" kaydedildi");
+	}*/
+	
+	public void add(User user) {
+		System.out.println(user.userName + "kaydedildi");
+		
+	}
+
+}
+
+
+public class Main {
+
+	public static void main(String[] args) {
+        Instructor engin = new Instructor();
+		engin.userName =" enginDemirog";
+				
+	    Student student = new  Student();
+		student.userName = " x";
+	}
+	
+	UserManager userManager = new UserManager();
+	userManager.add(engin);   //"." ve ";" hata veriyor.Çözemedim
+	userManager.add(student); //"." ve ";" hata veriyor.Çözemedim
+	
+
+	}
+
+}
